@@ -1,0 +1,46 @@
+---
+title: "Wk4CodeBook"
+author: "Janelle Hampton"
+date: "September 24, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Source Data
+
+The source data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. This UCI HAR dataset contains many fields for raw accelerometer and gyroscope singals and also has a set of statistical summaries for each signal.  A full description is available at the site where the data was obtained:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+The source data for the project was downloaded here:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+## Run_analysis.R
+
+The program was written to follow the steps in the assignment resulting in a single, tidy data set containing the average for each variable for each activity and each subject.  
+
+    Step 1.  Merge the training and the test sets to create one data set.
+            read in data files using read.table
+            add column name for subject files
+            add column names for measurement files
+            add column name for label files
+            Merge the training and test sets to create one data set using rbind
+                create 'x' data set 
+                create 'y' data set
+                create 'subject' data set
+            Add names to column headers using the features file
+            Create one master data set called 'xdata'
+            
+    Step 2. Extracting only the measurements on the mean and standard deviation for each measurement
+    Use grep to create 'meanandstd' data file containing only the mean and standard deviation for each measurement.
+            
+    Step 3. Uses descriptive activity names to name the activities in the data set using the activity_labels.txt file
+        Resulting data set is merged with meanandstd and named 'activitynames'
+    Step 4. Adds descriptive column names to the 'activitynames' data set.
+    Step 5. The resulting tidy data set named 'tidy_result.txt' 
+    
+
+            
+     
